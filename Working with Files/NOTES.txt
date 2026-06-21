@@ -1,0 +1,1 @@
+# Writing File never add a new line automatically It just adds the content Barabarically.
