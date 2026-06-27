@@ -1,0 +1,2 @@
+# Arithematic Progression
+# Geometric Progression 
