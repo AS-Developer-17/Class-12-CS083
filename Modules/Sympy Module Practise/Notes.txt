@@ -1,0 +1,7 @@
+Sympy Introduction:
+
+This module allows us to deal with symbolical calculation instead of the algebraic one.
+
+Installation
+` pip install sympy
+

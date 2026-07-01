@@ -1,0 +1,41 @@
+# Introduction to Scipy
+Scipy is collection of functions built on Numpy.
+
+# Subpackages 
+Scipy is divided into subpackages for covering different domains of science and mathematics.
+
+cluster ~ comes with clustering algorithms.
+constants ~ Physics and Maths related data.
+differentiate ~ Differentiation tools for functions.
+fft ~ Allows us to perform fourier transforms.
+fftpack ~ Fast Fourier Transforms Pack  
+integrate ~ Integration (scipy.integrate)
+interpolate ~ Interpolation (scipy.interpolate)
+io ~ File IO (scipy.io)
+linalg ~ Linear Algebra (scipy.linalg)
+ndimage ~ Multidimensional Image Processing (scipy.ndimage)
+odr ~ Orthogonal distance regression
+optimize ~ Optimization (scipy.optimize)
+signal ~ Signal Processing (scipy.signal)
+sparse ~ Sparse Arrays 
+spatial ~ For Spatial Data Structures and Algorithms
+special ~ Special Functions related to Mathematics.
+stats ~ Statistics Operation on Data.
+
+________________________________________________________________
+
+#Scipy Constants
+Methods
+
+Values : Help us to get constant's value.
+Find   : ALlows to access the related search terms.
+Precision : Allows us to get the precision value for different values.
+Unit   : Generates the unit for the search term.
+
+
+ Conversion Functions
+nu2lambda : Help us to reedeem Wavelength from wave number. 
+lambda2nu : Help us to reedeem wave number from Wavelength.
+convert_temperature : Allows us to switch between different unit of temperature measurement.
+
+

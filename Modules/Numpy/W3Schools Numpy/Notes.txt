@@ -1,0 +1,32 @@
+Introduction
+
+-> It is a python module to work with the arrays, statistical data etc in matrix form.
+
+-> Created by Travis Oliphant in 2005.
+
+Getting Started
+
+Basic Installation related commands:
+->pip install numpy
+
+->import numpy
+
+->Often aliased as np 
+
+Numpy Arrays
+
+-> Numpy arrays are stored as ndarrays
+
+-> "numpy.array" is use to create arrays.
+
+-> "arrayName.ndim" is use to display dimensions
+
+-> ndmin arguement is use to define number of dimensions.
+
+-> To access any element in a array then use 
+arrayName[index according to list]
+
+->
+->
+->
+->
