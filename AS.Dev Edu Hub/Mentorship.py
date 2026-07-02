@@ -140,8 +140,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Define default API Key from Notes App.py as default fallback
-DEFAULT_API_KEY = "AIzaSyDtyi49ASpcZNdi3RR59Sck1X2GPWYgHS0"
+# Define default API Key from environment variables or Streamlit secrets
+DEFAULT_API_KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+if not DEFAULT_API_KEY:
+    try:
+        DEFAULT_API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY", "")
+    except Exception:
+        DEFAULT_API_KEY = ""
 
 # Sidebar Configuration
 st.sidebar.markdown("""
@@ -154,9 +159,9 @@ st.sidebar.markdown("""
 # API key selection in sidebar
 custom_api_key = st.sidebar.text_input(
     "Gemini API Key",
-    value=os.environ.get("GOOGLE_API_KEY", DEFAULT_API_KEY),
+    value=DEFAULT_API_KEY,
     type="password",
-    help="Default key is pre-loaded. Override if you wish to use your own API key."
+    help="Provide your Gemini API Key here or set the GEMINI_API_KEY environment variable."
 )
 
 # Initialize GenAI Client
@@ -187,6 +192,26 @@ st.sidebar.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+# Return to Hub button if running from hub
+if os.environ.get("RUNNING_FROM_HUB") == "True":
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("""
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="http://localhost:8500" target="_self" style="
+                text-decoration: none; 
+                color: #ffffff; 
+                background: linear-gradient(135deg, #14b8a6, #0d9488); 
+                padding: 10px 20px; 
+                border-radius: 8px; 
+                display: block; 
+                font-weight: bold;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            ">🔙 Return to EduHub</a>
+        </div>
+    """, unsafe_allow_html=True)
+
 
 # App Header
 st.markdown("""

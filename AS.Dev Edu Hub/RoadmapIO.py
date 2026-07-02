@@ -229,6 +229,26 @@ with st.sidebar:
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
+        
+    # Return to Hub button if running from hub
+    if os.environ.get("RUNNING_FROM_HUB") == "True":
+        st.markdown("---")
+        st.markdown("""
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="http://localhost:8500" target="_self" style="
+                    text-decoration: none; 
+                    color: #ffffff; 
+                    background: linear-gradient(135deg, #14b8a6, #0d9488); 
+                    padding: 10px 20px; 
+                    border-radius: 8px; 
+                    display: block; 
+                    font-weight: bold;
+                    text-align: center;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+                ">🔙 Return to EduHub</a>
+            </div>
+        """, unsafe_allow_html=True)
+
 
 # Header Section
 st.markdown("""

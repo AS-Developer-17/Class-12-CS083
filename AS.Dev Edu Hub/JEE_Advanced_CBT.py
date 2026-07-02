@@ -18,6 +18,29 @@ if not DEFAULT_API_KEY:
     except Exception:
         DEFAULT_API_KEY = ""
 
+# Return to Hub button if running from hub
+if os.environ.get("RUNNING_FROM_HUB") == "True":
+    with st.sidebar:
+        st.markdown("""
+            <div style="text-align: center; margin-top: 15px; padding: 10px;">
+                <h3 style="color: white; font-family: 'Outfit', sans-serif;">AS.Dev EduHub</h3>
+                <span style="background: rgba(20, 184, 166, 0.2); color: #14b8a6; padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Hub Mode Active</span>
+                <hr style="margin: 15px 0; border-color: rgba(255,255,255,0.1);">
+                <a href="http://localhost:8500" target="_self" style="
+                    text-decoration: none; 
+                    color: #ffffff; 
+                    background: linear-gradient(135deg, #14b8a6, #0d9488); 
+                    padding: 10px 20px; 
+                    border-radius: 8px; 
+                    display: block; 
+                    font-weight: bold;
+                    text-align: center;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+                ">🔙 Return to EduHub</a>
+            </div>
+        """, unsafe_allow_html=True)
+
+
 # JEE Advanced Chapter Pools — used for randomised paper generation
 PHYSICS_CHAPTERS = [
     "Mechanics - Kinematics & Projectile Motion", "Newton's Laws & Friction",
