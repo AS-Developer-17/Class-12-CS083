@@ -1,4 +1,2 @@
 Calculus,Statistic,  in python
 Valid Phone Numbers
-Love Calculator(Probability)
-# VS AS Dark Theme (VS Code MarketPlace)
